@@ -1,7 +1,9 @@
 # hexo-theme-mustom
-all written by qoder 脱敏是去掉我blog的信息方便套用
+all written by qoder 
+脱敏是去掉我blog的信息方便套用
 主要参考了 jinyaoMa 的主题 与 https://blog.douchi.space/ 的组件
-已迁移到Astro，这个可能不能跑我也懒得管了
+介于原主题archive好久了而且一个hexo ver一个vue ver而我打算换新的，全交给ai了
+已迁移到Astro，这个主题可能不能跑我也懒得管了
 
 ## 这一份是改过的 fork（已脱敏）
 
