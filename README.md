@@ -12,7 +12,8 @@ This project is inspired by and references the following Mustom projects:
 - [jinyaoMa/hexo-theme-mustom](https://github.com/jinyaoMa/hexo-theme-mustom)
 - [jinyaoMa/mustom-next](https://github.com/jinyaoMa/mustom-next)
 - [jinyaoMa/vuepress-theme-mustom](https://github.com/jinyaoMa/vuepress-theme-mustom)
-- 
+- https://blog.douchi.space/
+
 ## 这一份是改过的 fork（已脱敏）
 
 上游是 `jinyaoMa/hexo-theme-mustom@e729ac5`（远端 `master` 的 HEAD，上游最后一版，此后无维护）。这一份在原站点上跑了一段时间之后抽出来做成了通用模板：个人标识全部换成占位、零引用的文件删掉、看板娘模型不打包、有公开出处的第三方件改指外链。目录形状和上游一致——`README.md`、`_config.yml`、`layout/`、`scripts/`、`source/`，另多一个 hexo 完全不读的 `docs/`（两份说明 + 站点侧样例）；主题本体共 228 个文件（具体字节数写在 `docs/对比原版.md` 第十节，那里才写数——本文件在统计集合里，把数字写在这儿的话，改我这句话就把那个数改旧了）。相对上游少掉的 36 个文件（组成由 `_tmp/theme_diff_tpl.py` 现跑分组，上游侧合计 9,853,303 字节）：改成外链字体链后出库的 `SourceHanSansCN.otf`（8,800,680）、上游自带的 haruto 看板娘模型 14 件（431,306）、零引用的 8 张图（333,733，含上游自己也从没引用过的 `empty.png`/`qf3cu.jpg`/`qf3cu.png`）、网易云 `audioplayer`/`APlayer`/`Meting`/`L2Dwidget`/`md5` 那套插件 10 件（262,344）、第 W 轮出库的 `asset/font/iconfont.{eot,ttf,woff}` 3 件（25,240）。Font Awesome 的 15 个字体文件（`fa-{brands-400,regular-400,solid-900}.{eot,svg,ttf,woff,woff2}`，合计 2,771,050 字节）在第 R 轮出过库、第 W3 轮又按"加一层本地兜底"放回主题，所以它们不在这 36 件里，名字记在这一句。本 fork 新增 17 个文件（`biliplayer`、`heatmap` 两块功能与 `scripts/plugin/heading-numbers.js`、占位壁纸 `img/bg.jpg`、`live2d/umaru/SOURCE.txt`、自托管看板娘运行时 `source/live2d/` 6 件）。
