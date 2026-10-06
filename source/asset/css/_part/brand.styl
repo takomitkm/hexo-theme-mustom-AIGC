@@ -1,0 +1,92 @@
+@keyframes brand-appear
+  from
+    opacity 0
+  to
+    opacity 1
+
+.p-brand
+  user-select none
+  overflow hidden
+  width $drawer_width - $gap * 8
+  margin $gap * 4
+  border-radius $gap * 0.5
+  text-align center
+  border 1px solid var(--color-clear)
+  background var(--color-background)
+  line-height 1
+  white-space normal
+  animation brand-appear 0.6s ease
+
+.p-brand-avatar
+  width s('calc(100% - %s)', $gap * 4)
+  margin $gap * 2
+  border-radius $gap * 0.5
+  max-width $app_mobile_width * 0.5
+
+.p-brand-name
+  background var(--color-clear)
+  font-size 1.5em
+  line-height 2
+  white-space nowrap
+
+.p-brand-slogan
+  // 中文 slogan 是四行（zh-cn.yml 里用 <br> 断），行高不能再是 3，否则四行 192px
+  // 会把整张卡片撑爆；上下各留 $gap 补回原来单行 line-height 3 那点留白
+  line-height 1.6
+  padding $gap 0
+
+.p-brand-counts
+  padding-bottom $gap * 1.25
+  line-height 2
+  font-size 0.88em
+  > span, > .p-brand-rss
+    display inline-block
+    padding 0 $gap
+    &:nth-child(even)
+      border-left 1px solid
+      border-right 1px solid
+  .p-brand-rss
+    color var(--color-text)
+    // 1em 的 svg 在行盒里按基线放会顶到上沿，-0.125em 是 Font Awesome 同款的对齐量
+    svg
+      vertical-align -0.125em
+    &:hover
+      color var(--color-link)
+
+.p-brand-contacts
+  padding-bottom $gap * 1.5
+  font-size 1.25em
+  line-height 2
+  // 图标一律用目标站点自己的 favicon，外链不入库；显示尺寸只在这里定，浏览器运行时缩放
+  .p-brand-contact-img
+    width 1.2em
+    height 1.2em
+  a
+    display inline-flex
+    align-items center
+    justify-content center
+    // inline-level 的 flex 盒按基线对齐，而图片的基线是它的底边：不写死高度就会一格高一格矮
+    width 2em
+    height 2em
+    vertical-align middle
+    color var(--color-text)
+    border-radius $gap * 0.5
+    @media (min-width: $app_mobile_width_min)
+      &:hover
+        background var(--color-clear)
+
+// GitHub 自带的 favicon 是近黑的 #171515，夜间皮肤底色 #000000cc，不翻一下就是看不见
+:root.night
+  .p-brand-contact-dark
+    filter invert(1)
+
+@media (max-width: $app_mobile_width)
+  .p-brand
+    width 100%
+    margin 0
+    border none
+    border-bottom 1px solid var(--color-clear)
+    border-radius 0
+  // 手机版抽屉够宽，联系方式那排图标露出来，和桌面一致
+  .p-brand-contacts
+    display block

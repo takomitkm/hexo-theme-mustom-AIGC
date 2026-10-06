@@ -1,0 +1,172 @@
+sitename: 我的站点
+brand:
+  name: YourName
+  slogan: "&quot;这里换成你的签名&quot;<br>&quot;签名可以写多行&quot;"
+  posts: 文章计数
+  categories: 分类计数
+  tags: 标签计数
+  github: 通过Github关注我
+  bilibili: 通过B站关注我
+  email: 通过邮件联系我
+  qq: 通过QQ联系我
+menus:
+  main:
+    caption: 本站
+    items:
+      home: 首页
+      archive: 归档
+      about: 关于
+      live: 直播间
+  job:
+    caption: 工作
+    items:
+      resume: 简历小贴士
+      letter: 求职信小贴士
+  others:
+    caption: 其他
+    items:
+      library: 代码库
+      icons: 图标字体库
+      records: 记录
+      gallery: 图库
+skin:
+  caption: 皮肤
+  items:
+    default: 默认
+    gray: 亮灰
+    colorful: 彩色
+settings:
+  caption: 设置
+  items:
+    langshift: English
+    night: 夜间模式
+    transfigure: 透明小人
+    hideplayer: 隐藏播放器
+    autoplay: 自动播放
+footer:
+  powered: 由 %s 强力驱动
+  theme: 主题 %s By %s
+  license: 知识共享署名-非商业用途-相同方式共享4.0国际许可协议
+  tipPv: 全站浏览量 PV：第三方服务"不蒜子"按本站地址累计的打开次数，包含你自己打开的次数，无防刷
+  tipUv: 全站独立访客 UV：不蒜子按访客浏览器去重后的数量，换浏览器、清缓存或换网络会被当成新的人
+  tipWd: 全站字数：Hexo 构建时统计的所有文章正文字数，和访客无关
+panels:
+  categories: 分类
+  tags: 标签
+biliplayer:
+  caption: 我的歌单
+  willplay: 即将开始播放我的歌单
+  cancel: 取消自动播放
+  play: 播放
+  prev: 上一首
+  next: 下一首
+  nopause: 无法暂停，不想听就点右上角 × 关闭本栏
+heatmap:
+  caption: 博客废话产量
+  unit: 千字
+  source: 做法取自椒盐豆豉<a href="https://blog.douchi.space/hugo-blog-heatmap/" target="_blank">《如何给 Hugo 博客添加热力图》</a>，数据端按本站的 hexo 重写过
+adframe:
+  random: 闲逛
+hitokoto: 一言
+recentposts:
+  caption: 近期文章
+  date: 发布日期
+  updated: 更新日期
+  categories: 文章分类
+  more: 更多文章
+comment:
+  caption: 留言板
+  placeholder: ヾﾉ≧∀≦)o 来呀，快写点什么吧！
+translater:
+  copy: 复制
+  to: 划词翻译（谷歌）
+  zh: 中文
+  en: English
+  jp: 日本語
+timeline:
+  caption: 文章档案
+  count: 共写有 <strong>%s</strong> 篇文章
+post:
+  caption: 文章
+  hint: "本文总计 %s 字, 阅读约需要 %s 分钟"
+  min2read: "%s 分钟"
+  date: 发布日期
+  updated: 更新日期
+  categories: 本文分类
+  wordcount: 本文字数
+  min2readt: 预计阅读时长
+  viewcount: 本文访问量（不蒜子按本页地址统计）
+  ending:
+    head: 以上文章结束
+    tail: 感谢您的阅读
+  friend:
+    text: 请多多留言，您的建议将大大提升我的创作质量！
+    button: 加我好友
+    qq: QQ
+    wechat: 微信
+  share:
+    title: 微信扫一扫：分享
+    helper: <p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>
+  license:
+    labels:
+      author: "本文作者: "
+      link: "本文链接: "
+      notice: "版权声明: "
+    text: 本站所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！
+page:
+  caption: 页面
+  viewcount: 本页访问量（不蒜子按本页地址统计）
+toc:
+  caption: 目录
+  noheadings: "?(￣△￣?) [没有目录]"
+search:
+  placeholder: 输入关键字
+  button: 搜索
+pather:
+  archive: 归档
+  catarchive: "归档 [分类]"
+  tagarchive: "归档 [标签]"
+  about: 关于
+  live: 直播间
+  resume: 简历小贴士
+  letter: 求职信小贴士
+  library: 代码库
+  icons: 图标字体库
+  records: 记录
+  gallery: 图库
+  home: 首页
+records:
+  caption: 存档
+  labels:
+    type: "类型："
+    source: "来源："
+    author: "相关："
+    progress: "进度："
+    summary: "总结："
+  types:
+    default: 默认
+    books: 书籍
+    article: 文章
+    paper: 论文
+    newspaper: 报纸
+    report: 报告
+    picture: 图片
+    anime: 动漫
+    video: 视频
+    movie: 电影
+    audio: 音频
+codelib:
+  captions:
+    log: 更新历史
+    stack: 代码栈
+  more: 展开
+  less: 收起
+iconlib:
+  captions:
+    log: 更新历史
+    stack: 图标栈
+  more: 展开
+  less: 收起
+notification:
+  welcome: 欢迎光临本站。
+  browser: ""

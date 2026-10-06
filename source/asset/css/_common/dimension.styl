@@ -1,0 +1,33 @@
+zIndex(num)
+  999999999 - num
+// 正文背后那张图：换站点时把你自己的壁纸放到 source/asset/img/bg.jpg 覆盖掉这份占位即可，
+// 随主题打包；模板里这张是纯色生成的占位图，不是任何人的作品
+$picurl = '/asset/img/bg.jpg'
+// Dimensions
+$gap = 8px
+$font_size = 16px
+$progress_height = 0.6vmin
+$app_width = 1366px
+$drawer_width = 320px
+$aside_width = 320px
+$main_min_width = 320px
+$main_min_width_with_offset = $main_min_width + 32px // scrollbar offset
+$app_mobile_width = 1023px //+ $font_size * 6 // $drawer_width + $aside_width + $main_min_width_with_offset ; + 6em
+$app_mobile_width_min = $app_mobile_width + 1px // for media min-width
+$timeline_col_left = 120px
+$post_qrcode_width = 300px
+$post_nav_width = 320px
+$extension_grid_width = 64px
+$float_button_min_app_width = 1488px
+// 列表页（首页 / 归档 / 分类 / 标签）两篇文章之间的分隔符
+// 默认 8 个 ⫘；js/main 会按行宽重算 ⫘ 的个数并写进 --divider
+$divider = '✟⫘⫘⫘⫘⫘⫘⫘⫘✟'
+$divider_value = var(--divider, $divider)
+// 字体链走 CSS Fonts 默认的逐字回退：某款字体缺某个字时，只有那个字落到链里的下一款
+// 前三款都是外链（frame.ejs 的 <link>），第四款不注册任何东西，字形由访客设备决定
+$font_body = unquote("'Huiwen-mincho', 'STDongGuanTi Bld', 'Noto Sans SC', Arial, Helvetica, sans-serif")
+// 侧栏另起一款，排在正文那串前面：侧栏放的是站名和签名，冷僻字比正文常见，而链里
+// 前三款都有自己声明的码位段，缺的字会逐字一路落到访客的系统字体、字面就散了。
+// 思源宋体（Source Han Serif CN VF）是 382 切片、30,898 个码位，字面也是宋体，和正文的
+// 汇文明朝体同一路。换签名之后建议把新文案逐字核一遍这几个码位覆盖得下吗。
+$font_drawer = unquote("'Source Han Serif CN VF', 'Huiwen-mincho', 'STDongGuanTi Bld', 'Noto Sans SC', Arial, Helvetica, sans-serif")

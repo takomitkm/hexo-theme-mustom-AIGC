@@ -1,0 +1,137 @@
+@keyframes hitokoto-appear
+  from
+    opacity 0
+  to
+    opacity 1
+
+@keyframes hitokoto-flashing
+  0%
+    opacity 1
+  50%
+    opacity 0
+  100%
+    opacity 1
+
+.p-hitokoto
+  overflow hidden
+  user-select none
+  margin $gap * 4 0
+  border-radius $gap * 0.5
+  border 1px solid var(--color-clear)
+  background var(--color-background)
+  line-height 1
+  animation hitokoto-appear 0.6s ease
+  position relative
+  img
+    display inherit
+    width 100%
+    min-height 6em
+    transition opacity 0.6s
+    pointer-events none
+
+.p-hitokoto-content, .p-hitokoto-name
+  user-select text
+
+.p-hitokoto-content
+  &:after
+    content ''
+    border-left 0.1rem solid
+    animation hitokoto-flashing 1.2s ease-in-out infinite
+
+.p-hitokoto-caption
+  padding 0 $gap
+  font-size 0.8em
+  line-height 2.5
+  background var(--color-clear)
+  i
+    margin-right $gap * 0.5
+
+.p-hitokoto-from
+  text-align center
+  padding 0 $gap * 4
+  position absolute
+  z-index 1
+  width 100%
+  max-height 6em
+  line-height 6
+  overflow hidden
+  white-space nowrap
+  text-overflow ellipsis
+  font-size 1.25em
+
+.p-hitokoto-name
+  background var(--color-background)
+  display inline-block
+  line-height 1
+  &:before
+    content '-「 '
+  &:after
+    content ' 」-'
+
+.p-hitokoto-word
+  text-align center
+  margin $gap * 2 ($gap * 4) $gap
+  padding $gap * 2
+  position relative
+  line-height 2
+  font-size 1.5em
+  word-break keep-all
+  overflow-wrap break-word
+  &:before
+    content '『'
+    position absolute
+    left -0.5em
+    top 0
+  &:after
+    content '』'
+    position absolute
+    right -0.5em
+    bottom 0
+
+@media (max-width: $app_mobile_width)
+  .p-hitokoto
+    margin 0
+    border none
+    border-bottom 1px solid var(--color-clear)
+    border-radius 0
+  .p-hitokoto-caption
+    text-align center
+    i
+      display none
+  .p-hitokoto-from
+    line-height 1.5
+    white-space normal
+    font-size 1em
+  .p-hitokoto-word
+    margin $gap
+    line-height 1.75
+    font-size 1.25em
+  // 下面这几条只在手机版真的把播放器搬进来时生效（.p-hitokoto-bgm 由
+  // main.js 加），所以「窄窗口 + 桌面 UA」这种组合仍然按原来那张图显示，
+  // 不会图没了播放器也没来
+  .p-hitokoto.p-hitokoto-bgm
+    // 播放器接在 <img> 原来的位置上，所以图片让位；把播放器藏起来
+    // （设置里的"隐藏播放器"，或桌面版标题栏那个 ×）时图片回来
+    > img
+      display none
+    &.p-hitokoto-restored > img
+      display block
+    // 视频比原来那张 6em 的图高得多，作者行继续绝对定位会压在视频上
+    > .p-hitokoto-from
+      position static
+      padding 0 $gap
+    > .p-biliplayer
+      width 100%
+      margin 0
+      border none
+      border-radius 0
+      // 手机版不显示"我的歌单"那条标题栏：面板自己已经有一言的标题，
+      // 而且那条里的 × 在手机上是关不掉的（自动播放本来就没开）
+      > .p-biliplayer-caption
+        display none
+
+@media (max-width: $app_mobile_width)
+  :root.night
+    .p-hitokoto
+      img
+        opacity 0.8

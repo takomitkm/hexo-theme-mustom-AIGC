@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="<%= config.language %>">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+  <meta name="renderer" content="webkit">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="google-site-verification" content="<%= google_site_verification %>">
+  <meta name="baidu-site-verification" content="<%= baidu_site_verification %>">
+  <meta name="description" content="<%= description %>">
+  <meta name="keywords" content="<%= keywords %>">
+  <meta name="author" content="<%= author %>">
+  <meta name="layout-parts" content="<%= parts %>">
+  <link rel="shortcut icon" type="image/png" href="<%= favicon %>">
+  <link rel="apple-touch-icon" type="image/png" href="<%= appleIcon %>">
+  <link rel="manifest" href="<%= manifest %>">
+  <title><%= title %></title>
+  <%- adScript ? adScript : '' %>
+  <%- config.babelify ? '' : $nomjs('nomodule') %>
+  <% if (config.CDN_ENABLE) { %>
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/jinyaoMa/jinyaoMa.github.io@master/asset/css/style.css?t=<%= Date.now() %>">
+  <% } else { %>
+  <link rel="preconnect" href="https://cn-font.claude-code-best.win" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+    href="https://cn-font.claude-code-best.win/packages/hwmct/dist/%E6%B1%87%E6%96%87%E6%98%8E%E6%9C%9D%E4%BD%93/result.css">
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+    href="https://cn-font.claude-code-best.win/packages/stdgt/dist/%E4%B8%8A%E5%9B%BE%E4%B8%9C%E8%A7%82%E4%BD%93-%E7%B2%97%E4%BD%93/result.css">
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+    href="https://cdn.jsdelivr.net/npm/@fontsource/noto-sans-sc@5/index.css">
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+    href="https://cn-font.claude-code-best.win/packages/syst/dist/SourceHanSerifCN/result.css">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://cn-font.claude-code-best.win/packages/hwmct/dist/%E6%B1%87%E6%96%87%E6%98%8E%E6%9C%9D%E4%BD%93/result.css">
+    <link rel="stylesheet"
+      href="https://cn-font.claude-code-best.win/packages/stdgt/dist/%E4%B8%8A%E5%9B%BE%E4%B8%9C%E8%A7%82%E4%BD%93-%E7%B2%97%E4%BD%93/result.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/noto-sans-sc@5/index.css">
+    <link rel="stylesheet"
+      href="https://cn-font.claude-code-best.win/packages/syst/dist/SourceHanSerifCN/result.css">
+  </noscript>
+  <%- $css('style') %>
+  <%- $mjs('main') %>
+  <% } %>
+</head>
+
+<body>
+  <canvas class="m-evanyou-canvas"></canvas>
+  <div class="m-launch"></div>
+  <div class="m-spinner">
+    <div class="m-spinner-ring"></div>
+  </div>
+  <div class="m-progress">
+    <div class="m-progress-current"></div>
+  </div>
+  <!-- Outside App -->
+  <div class="m-app">
+    <div class="m-closeDrawer"></div>
+    <div class="m-app-inner">
+      <div class="m-header">
+        <%- partial('_part/xdrawer') %>
+        <%- partial('_part/xsearch') %>
+        <%- partial('_part/sitename') %>
+        <!-- END header -->
+      </div>
+      <div class="m-center">
+        <div class="m-drawer">
+          <%- partial('_part/brand') %>
+          <%- partial('_part/menus') %>
+          <%- partial('_part/skin') %>
+          <%- partial('_part/settings') %>
+          <%- partial('_part/panels') %>
+          <div class="m-drawer-mark"></div>
+          <!-- END drawer -->
+        </div>
+        <div class="m-frame">
+          <div class="m-main">
+            <div class="m-heaper">
+              <%- partial('_part/xaside') %>
+              <%- partial('_part/pather') %>
+              <!-- END heaper -->
+            </div>
+            <%- partial('_part/heatmap') %>
+            <%- partial('_part/translater') %>
+            <div class="m-content">
+              <%- partial('_part/hitokoto') %>
+              <%- partial('_part/recentposts') %>
+              <%- partial('_part/timeline') %>
+              <%- partial('_part/post') %>
+              <%- partial('_part/page') %>
+              <%- partial('_part/codelib') %>
+              <%- partial('_part/records') %>
+              <%- partial('_part/gallery') %>
+              <%- partial('_part/iconlib') %>
+              <!-- END content -->
+            </div>
+            <%- partial('_part/comment') %>
+            <%- partial('_part/empty') %>
+            <!-- END main -->
+          </div>
+          <div class="m-aside">
+            <%- partial('_part/panels') %>
+            <%- partial('_part/biliplayer') %>
+            <% if (config.clustrmaps && config.clustrmaps.enable) { %>
+            <div class="m-aside-clustrmaps">
+              <script id="<%= config.clustrmaps.id %>" src="<%= config.clustrmaps.src %>"></script>
+            </div>
+            <% } %>
+            <%- partial('_part/toc') %>
+            <div class="m-aside-mark"></div>
+            <!-- END aside -->
+          </div>
+        </div>
+      </div>
+      <div class="m-footer">
+        <%- partial('_part/footer') %>
+        <!-- END footer -->
+      </div>
+      <%- partial('_part/xcanvas') %>
+      <%- partial('_part/goingto') %>
+      <%- partial('_part/extension') %>
+      <%- partial('_part/adframe') %>
+      <%- partial('_part/search') %>
+      <%- partial('_part/notification') %>
+      <!-- END app -->
+    </div>
+  </div>
+  <% if (config.CDN_ENABLE) { %>
+  <script src="https://cdn.jsdelivr.net/gh/jinyaoMa/jinyaoMa.github.io@master/asset/js/main.js?t=<%= Date.now() %>">
+  </script>
+  <% } %>
+  <!-- waifu.css 与主题内原件逐字节相同（sha256 ee9cec09…），改指 jsdelivr 上钉死到该 commit 的同一份，本地不再存副本 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@34b27cc8bcbac20e56344429e890b9bad885d002/dist/waifu.css">
+  <link rel="stylesheet" href="<%- url_for('/live2d/site.css') %>">
+  <script>
+    window.LIVE2D_BASE = <%- JSON.stringify(url_for('/live2d/')) %>;
+  </script>
+  <script type="module" src="<%- url_for('/live2d/loader.js') %>"></script>
+</body>
+
+</html>

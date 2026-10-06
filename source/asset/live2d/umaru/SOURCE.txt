@@ -1,0 +1,19 @@
+占位：这份模板不带看板娘模型。
+
+模型出处 https://mx.paul.ren/model/umaru.html （Dreamer-Paul，模型 model.json 的 posted 字段写的就是他）；
+同一套文件在 https://github.com/HesperusVenus/live2d 的 models/umaru 里也有流传（该仓库最后一次推送
+2020-11-04，没有 LICENSE 文件，README 只列了模型名——干物妹小埋这类 IP 角色，未给再分发授权）。
+正因为拿不到再分发授权，模板里只留这个说明，模型文件要自己按上面的出处去取。
+
+要启用，把下面这些放进本目录，文件名要和 model.json 里写的路径逐字对上：
+
+    model.json          入口，站点侧 source/live2d/waifu-tips.json 的 models[].paths 指的就是它
+    model.moc           model.json 的 model 字段
+    physics.json        model.json 的 physics 字段
+    textures/texture_00.png
+    motions/*.mtn       model.json 的 motions 各分组按 file 引用
+    voice/*.mp3         同上，motion 条目的 sound 字段引用，播放动作时一起出声
+
+`/asset/` 开头是因为主题的 source 目录会被原样拷进产物，所以模型放这里就不用再改站点配置。
+没放模型时看板娘不会出来，其它面板不受影响；live2d-widget 本体的授权见站点侧
+source/live2d/LICENSE-live2d-widget.txt。
